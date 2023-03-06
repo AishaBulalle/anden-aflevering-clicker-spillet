@@ -1,0 +1,383 @@
+body {
+  margin: 0;
+}
+
+h2 {
+  font-size: 4em;
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1em 0 1.5em;
+}
+
+img {
+  max-width: 100%;
+}
+
+#screen {
+  aspect-ratio: 16 / 9;
+
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+#game {
+  grid-area: 1 / 1;
+
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+#game-background {
+  grid-area: 1 / 1;
+  background-image: url("billedet\ joooo\ .webp");
+  background-size: cover;
+}
+
+#game-elements {
+  grid-area: 1 /1;
+  position: relative;
+  overflow: hidden;
+}
+
+#game_over {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #c90303 0%, #790909 100%);
+  color: #ffffff;
+}
+
+#game_over,
+#level_complete,
+#start {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+#start,
+#level_complete {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #c903b2 0%, #250979 100%);
+  color: #ffffff;
+}
+
+.hidden,
+#game_over.hidden,
+#level_complete.hidden,
+#game.hidden,
+#start.hidden {
+  display: none;
+}
+
+#proteinbar_container1 {
+  position: absolute;
+  top: 18%;
+  left: 61%;
+}
+#proteinbar_container2 {
+  position: absolute;
+  top: 62%;
+  left: 75%;
+}
+#proteinbar_container3 {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+}
+
+#waterbottle_container1 {
+  position: absolute;
+  top: 30%;
+  left: 70%;
+}
+#waterbottle_container2 {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+}
+#waterbottle_container3 {
+  position: absolute;
+  top: 99%;
+  left: 65%;
+}
+
+#muffin_container1 {
+  position: absolute;
+  top: 5%;
+  left: 65%;
+}
+#muffin_container2 {
+  position: absolute;
+  top: 40%;
+  left: 68%;
+}
+#muffin_container3 {
+  position: absolute;
+  top: 99%;
+  left: 85%;
+}
+
+#manden_container {
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 2%;
+}
+
+#proteinbar1_sprite {
+  width: 30%;
+}
+
+#proteinbar2_sprite {
+  width: 30%;
+}
+#proteinbar3_sprite {
+  width: 30%;
+}
+
+#waterbottle1_sprite {
+  width: 27%;
+}
+#waterbottle2_sprite {
+  width: 27%;
+}
+#waterbottle3_sprite {
+  width: 27%;
+}
+
+#muffin1_sprite {
+  width: 25%;
+}
+#muffin2_sprite {
+  width: 25%;
+}
+#muffin3_sprite {
+  width: 15%;
+}
+
+.position1 {
+  left: 61vw;
+}
+
+.position2 {
+  left: 75vw;
+}
+.position3 {
+  left: 80vw;
+}
+.position4 {
+  left: 70vw;
+}
+.position5 {
+  left: 65vw;
+}
+.position6 {
+  left: 65vw;
+}
+.position7 {
+  left: 65vw;
+}
+.position8 {
+  left: 68vw;
+}
+.position9 {
+  left: 85vw;
+}
+
+.active_heart {
+  filter: drop-shadow(0 0 2px yellow);
+}
+
+.broken_heart {
+  filter: grayscale(75%) blur(0.5px);
+}
+
+.falling {
+  animation-name: falling;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+
+.falling1 {
+  animation-name: falling;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(0, -300%);
+  }
+
+  100% {
+    transform: translate(0, 300%);
+  }
+}
+
+.zoom_out {
+  animation-name: zoom_out;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom_out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.zoom_in {
+  animation-name: zoom_in;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom_in {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  90% {
+    transform: translate(100%, 0) scale(5) rotate(90deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(100%, 0) scale(5) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+#game_ui {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  color: white;
+
+  font-size: 2em;
+
+  pointer-events: none;
+}
+
+#scoreboard {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  gap: 0em;
+}
+
+#muffinproteinbar_count {
+  white-space: nowrap;
+  text-align: right;
+  top: 20%;
+}
+
+#scoreboard_image {
+  width: 4em;
+}
+
+#time_board {
+  position: relative;
+}
+
+#time_container {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 30/6;
+  border: 2px solid black;
+  background-color: rgba(208, 204, 204, 0.383);
+  top: 1.6vh;
+  right: 0.2vw;
+}
+
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transform-origin: right;
+}
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+  0% {
+    scale: 1 1;
+    background-color: limegreen;
+  }
+  50% {
+    background-color: rgb(255, 230, 0);
+  }
+  100% {
+    scale: 0 1;
+    background-color: red;
+  }
+}
+
+#life_board {
+  display: grid;
+  grid-template-columns: 1.2em 1.2em 1.2em;
+  gap: 0.3em;
+}
+
+#life_board img {
+  width: 100%;
+}
+
+@keyframes pulse_kf {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation-name: pulse_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  margin: auto;
+  background-color: #ffad01;
+  color: #fff4bf;
+  border: 10px solid #ffc72e;
+  cursor: pointer;
+  border-radius: 10px;
+}

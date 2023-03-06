@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Træningspillet</title>
+    <link rel="stylesheet" href="træning.css">
+</head>
+<body>
+<div id="screen">
+<div id="game">
+    <div id="game-background">         
+    </div>
+    <div id="game-elements"> 
+        <div id="proteinbar_container1"> 
+            <img id="proteinbar1_sprite" src="protein barr.png" alt="">
+        </div>
+        <div id="proteinbar_container2"> 
+            <img id="proteinbar2_sprite" src="protein barr.png" alt="">
+        </div>
+        <div id="proteinbar_container3"> 
+            <img id="proteinbar3_sprite" src="protein barr.png" alt="">
+            </div>
+        <div id="waterbottle_container1"> 
+        <img id="waterbottle1_sprite" src="waterbottle1.png" alt="">
+        </div>
+        <div id="waterbottle_container2"> 
+        <img id="waterbottle2_sprite" src="waterbottle1.png" alt="">
+        </div>
+        <div id="waterbottle_container3"> 
+        <img id="waterbottle3_sprite" src="waterbottle1.png" alt="">
+        </div>
+        <div id="muffin_container1"> 
+        <img id="muffin1_sprite" src="muffinn.png" alt="">
+            </div>
+            <div id="muffin_container2"> 
+        <img id="muffin2_sprite" src="muffinn.png" alt="">
+            </div>
+            <div id="muffin_container3"> 
+        <img id="muffin3_sprite" src="muffinn.png" alt="">
+            </div>
+        <div id="manden_container">
+            <img src="mand der trænerr.png" alt="">
+        </div>
+        <div id="game_ui">
+            <div id="score_board">
+                <span id="muffinproteinbar_count">0</span>
+                <img id="scoreboard_image" src="scoreboard.png" />
+            </div>
+            <div id="life_board">
+                <img id="heart1" src="heart gamee.png" class="active_heart" />
+                <img id="heart2" src="heart gamee.png" class="active_heart" />
+                <img id="heart3" src="heart gamee.png" class="active_heart" />
+            </div>
+            <div id="time_board">
+                    <div id="time_container">
+                        <div id="time_sprite" class=""></div>
+                    </div>
+                </div>
+      </div>
+
+      <div id="start">
+        <h2>Fitness Game</h2>
+        <p>🏋🏾Collect 10 points to win🏋🏾</p> 
+        <button id="btn_start" class="pulse">Start</button>
+      </div> 
+      <div id="game_over" class="hidden">
+         <h2>Game Over 😵</h2> 
+          <button id="btn_restart" class="pulse">Restart Game</button>
+        </div>
+        <div id="level_complete" class="hidden">
+         <h2>Level Complete 🎉</h2>
+         <button id="btn_go_to_start" class="pulse">Go to start</button>
+        </div>
+      </div>   
+      
+     <audio id="levelcomplete_sound" src="levelcomplete.mp3"></audio> 
+     <audio id="gameover_sound" src="gameover.mp3"></audio>
+     <audio id="background_sound" src="background_sound.mp3"></audio>
+     <audio id="good_click" src="good_click.mp3"></audio>
+     <audio id="bad_click" src="bad_click.mp3"></audio>
+
+   <script src="script.js"></script>
+</body>
+</html>
